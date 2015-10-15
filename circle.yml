@@ -1,0 +1,20 @@
+test:
+  override:
+    # Default task run all specs.
+    - rake
+  post:
+    # Make sure sample_data still runs correctly, since it's easy to miss.
+    - rake db:sample_data
+
+deployment:
+  acceptance:
+    branch: development
+    commands:
+      - ./bin/deploy.sh delorean-acceptance:
+          timeout: 360
+
+  production:
+    branch: master 
+    commands:
+      - ./bin/deploy.sh delorean:
+          timeout: 360

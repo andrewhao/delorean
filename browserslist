@@ -1,0 +1,7 @@
+# Browsers supported by autoprefixer
+# See the browserslist docs for a full list of options
+# https://github.com/ai/browserslist
+
+last 2 versions
+# > 1%
+# IE 10

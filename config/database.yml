@@ -1,0 +1,25 @@
+# PostgreSQL. Versions 8.2 and up are supported.
+# Use 'createuser -s postgres' to create a general purpose db (super)user.
+
+development: &default
+  adapter: postgresql
+  encoding: unicode
+  database: delorean_development
+  username: postgres
+  pool: <%= ENV['DB_POOL'].presence || ENV['MAX_THREADS'].presence || 5 %>
+  timeout: 5000
+
+# Don't use the erb specified pool setting here so CircleCI doesn't fall over
+test:
+  <<: *default
+  database: delorean_test
+  min_messages: warning
+  pool: 5
+
+acceptance:
+  <<: *default
+  url: <%= ENV['DATABASE_URL'] %>
+
+production:
+  <<: *default
+  url: <%= ENV['DATABASE_URL'] %>
