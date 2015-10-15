@@ -1,0 +1,2 @@
+class TripPoolTripsController < ApplicationController
+end

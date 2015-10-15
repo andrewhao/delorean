@@ -310,6 +310,3 @@ DEPENDENCIES
   spring
   spring-commands-rspec
   uglifier
-
-BUNDLED WITH
-   1.10.5

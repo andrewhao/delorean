@@ -1,0 +1,2 @@
+class TripServiceTiersController < ApplicationController
+end
