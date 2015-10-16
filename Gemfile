@@ -17,6 +17,8 @@ gem 'simple_form'
 gem 'uglifier'
 gem 'autoprefixer-rails'
 
+gem 'railroady'
+
 gem 'awesome_print'
 
 group :production, :acceptance do
