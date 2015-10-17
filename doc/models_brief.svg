@@ -42,10 +42,10 @@
 <ellipse fill="none" stroke="black" cx="632.688" cy="-36.5" rx="56.3278" ry="18"/>
 <text text-anchor="middle" x="632.688" y="-32.3" font-family="Times,serif" font-size="14.00">TripPoolTrip</text>
 </g>
-<!-- TripServiceTier -->
-<g id="node7" class="node"><title>TripServiceTier</title>
+<!-- ServiceTier -->
+<g id="node7" class="node"><title>ServiceTier</title>
 <ellipse fill="none" stroke="black" cx="772.688" cy="-36.5" rx="65.9315" ry="18"/>
-<text text-anchor="middle" x="772.688" y="-32.3" font-family="Times,serif" font-size="14.00">TripServiceTier</text>
+<text text-anchor="middle" x="772.688" y="-32.3" font-family="Times,serif" font-size="14.00">ServiceTier</text>
 </g>
 <!-- User -->
 <g id="node8" class="node"><title>User</title>

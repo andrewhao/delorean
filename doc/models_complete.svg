@@ -71,10 +71,10 @@
 <text text-anchor="start" x="889.182" y="-56.3" font-family="Times,serif" font-size="14.00">created_at :datetime</text>
 <text text-anchor="start" x="889.182" y="-42.3" font-family="Times,serif" font-size="14.00">updated_at :datetime</text>
 </g>
-<!-- TripServiceTier -->
-<g id="node7" class="node"><title>TripServiceTier</title>
+<!-- ServiceTier -->
+<g id="node7" class="node"><title>ServiceTier</title>
 <path fill="none" stroke="black" d="M1043.9,-21.5C1043.9,-21.5 1245.48,-21.5 1245.48,-21.5 1251.48,-21.5 1257.48,-27.5 1257.48,-33.5 1257.48,-33.5 1257.48,-109.5 1257.48,-109.5 1257.48,-115.5 1251.48,-121.5 1245.48,-121.5 1245.48,-121.5 1043.9,-121.5 1043.9,-121.5 1037.9,-121.5 1031.9,-115.5 1031.9,-109.5 1031.9,-109.5 1031.9,-33.5 1031.9,-33.5 1031.9,-27.5 1037.9,-21.5 1043.9,-21.5"/>
-<text text-anchor="middle" x="1144.69" y="-106.3" font-family="Times,serif" font-size="14.00">TripServiceTier</text>
+<text text-anchor="middle" x="1144.69" y="-106.3" font-family="Times,serif" font-size="14.00">ServiceTier</text>
 <polyline fill="none" stroke="black" points="1031.9,-99.5 1257.48,-99.5 "/>
 <text text-anchor="start" x="1039.9" y="-84.3" font-family="Times,serif" font-size="14.00">id :integer</text>
 <text text-anchor="start" x="1039.9" y="-70.3" font-family="Times,serif" font-size="14.00">billed_rate :float</text>
@@ -102,7 +102,7 @@
 <text text-anchor="start" x="1434.23" y="-91.3" font-family="Times,serif" font-size="14.00">id :integer</text>
 <text text-anchor="start" x="1434.23" y="-77.3" font-family="Times,serif" font-size="14.00">gigawatt_output_rating :float</text>
 <text text-anchor="start" x="1434.23" y="-63.3" font-family="Times,serif" font-size="14.00">user_id :integer</text>
-<text text-anchor="start" x="1434.23" y="-49.3" font-family="Times,serif" font-size="14.00">trip_service_tier_id :integer</text>
+<text text-anchor="start" x="1434.23" y="-49.3" font-family="Times,serif" font-size="14.00">service_tier_id :integer</text>
 <text text-anchor="start" x="1434.23" y="-35.3" font-family="Times,serif" font-size="14.00">created_at :datetime</text>
 <text text-anchor="start" x="1434.23" y="-21.3" font-family="Times,serif" font-size="14.00">updated_at :datetime</text>
 </g>

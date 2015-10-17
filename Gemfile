@@ -16,6 +16,7 @@ gem 'coffee-rails'
 gem 'simple_form'
 gem 'uglifier'
 gem 'autoprefixer-rails'
+gem 'bcrypt'
 
 gem 'railroady'
 

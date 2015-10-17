@@ -47,10 +47,10 @@
 <ellipse fill="none" stroke="black" cx="202" cy="-139" rx="81.0718" ry="18"/>
 <text text-anchor="middle" x="202" y="-134.8" font-family="Times,serif" font-size="14.00">TripPoolsController</text>
 </g>
-<!-- TripServiceTiersController -->
-<g id="node8" class="node"><title>TripServiceTiersController</title>
+<!-- ServiceTiersController -->
+<g id="node8" class="node"><title>ServiceTiersController</title>
 <ellipse fill="none" stroke="black" cx="161" cy="-73" rx="105.515" ry="18"/>
-<text text-anchor="middle" x="161" y="-68.8" font-family="Times,serif" font-size="14.00">TripServiceTiersController</text>
+<text text-anchor="middle" x="161" y="-68.8" font-family="Times,serif" font-size="14.00">ServiceTiersController</text>
 </g>
 <!-- TripsController -->
 <g id="node9" class="node"><title>TripsController</title>

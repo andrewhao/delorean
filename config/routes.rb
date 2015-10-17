@@ -1,8 +1,9 @@
 Delorean::Application.routes.draw do
 
+  resources :vehicle_types
   resources :trip_pool_trips
   resources :trip_pools
-  resources :trip_service_tiers
+  resources :service_tiers
   resources :vehicles
   resources :orders
   resources :payments

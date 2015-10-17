@@ -72,10 +72,10 @@
 <polyline fill="none" stroke="black" points="-91.1436,-114 37.1436,-114 "/>
 <text text-anchor="start" x="-83.1436" y="-98.8" font-family="Times,serif" font-size="14.00">_layout</text>
 </g>
-<!-- TripServiceTiersController -->
-<g id="node8" class="node"><title>TripServiceTiersController</title>
+<!-- ServiceTiersController -->
+<g id="node8" class="node"><title>ServiceTiersController</title>
 <path fill="none" stroke="black" d="M77.2886,-66C77.2886,-66 220.711,-66 220.711,-66 226.711,-66 232.711,-72 232.711,-78 232.711,-78 232.711,-146 232.711,-146 232.711,-152 226.711,-158 220.711,-158 220.711,-158 77.2886,-158 77.2886,-158 71.2886,-158 65.2886,-152 65.2886,-146 65.2886,-146 65.2886,-78 65.2886,-78 65.2886,-72 71.2886,-66 77.2886,-66"/>
-<text text-anchor="middle" x="149" y="-142.8" font-family="Times,serif" font-size="14.00">TripServiceTiersController</text>
+<text text-anchor="middle" x="149" y="-142.8" font-family="Times,serif" font-size="14.00">ServiceTiersController</text>
 <polyline fill="none" stroke="black" points="65.2886,-136 232.711,-136 "/>
 <polyline fill="none" stroke="black" points="65.2886,-112 232.711,-112 "/>
 <polyline fill="none" stroke="black" points="65.2886,-88 232.711,-88 "/>
