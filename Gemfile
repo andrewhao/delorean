@@ -19,6 +19,7 @@ gem 'autoprefixer-rails'
 gem 'bcrypt'
 
 gem 'railroady'
+gem 'rails-erd'
 
 gem 'awesome_print'
 

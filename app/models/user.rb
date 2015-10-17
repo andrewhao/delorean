@@ -5,6 +5,7 @@ class User < ActiveRecord::Base
   has_many :orders
   belongs_to :service_tier
   has_one :vehicle
+  has_many :payments
 
   def driver?
     is_driver?

@@ -59,6 +59,7 @@ GEM
       rack (>= 1.0.0)
       rack-test (>= 0.5.4)
       xpath (~> 2.0)
+    choice (0.2.0)
     cliver (0.3.2)
     coderay (1.1.0)
     coffee-rails (4.1.0)
@@ -188,6 +189,11 @@ GEM
       activesupport (>= 4.2.0.beta, < 5.0)
       nokogiri (~> 1.6.0)
       rails-deprecated_sanitizer (>= 1.0.1)
+    rails-erd (1.4.4)
+      activerecord (>= 3.2)
+      activesupport (>= 3.2)
+      choice (~> 0.2.0)
+      ruby-graphviz (~> 1.2)
     rails-html-sanitizer (1.0.2)
       loofah (~> 2.0)
     rails_stdout_logging (0.0.3)
@@ -221,6 +227,7 @@ GEM
       rspec-mocks (~> 3.3.0)
       rspec-support (~> 3.3.0)
     rspec-support (3.3.0)
+    ruby-graphviz (1.2.2)
     ruby-progressbar (1.7.5)
     sass (3.4.16)
     sass-rails (5.0.3)
@@ -304,6 +311,7 @@ DEPENDENCIES
   rack-timeout
   railroady
   rails (~> 4.2.3)
+  rails-erd
   rails_stdout_logging
   rb-fsevent
   rspec-rails

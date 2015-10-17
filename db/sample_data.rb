@@ -22,18 +22,22 @@ begin
     year_1955 = Time.zone.parse("1955-01-01")
 
     vehicle_type_default = VehicleType.create!(name: "delorean")
-    vehicle_type_xl = VehicleType.create!(name: "delorean-xl")
+    vehicle_type_van = VehicleType.create!(name: "delorean-van")
 
     tier_default = ServiceTier.create!(rate: 5, vehicle_type: vehicle_type_default)
-    tier_xl = ServiceTier.create!(rate: 10, vehicle_type: vehicle_type_xl)
     tier_pool = ServiceTier.create!(rate: 2, vehicle_type: vehicle_type_default, is_eligible_for_trip_pooling: true)
-    v1 = Vehicle.create!(user: u1, gigawatt_output_rating: 1.21)
+    tier_xl = ServiceTier.create!(rate: 10, vehicle_type: vehicle_type_van)
+    v1 = Vehicle.create!(user: u1, gigawatt_output_rating: 1.21, vehicle_type: vehicle_type_default)
 
     t1 = Trip.create!(origin_date: year_2015, destination_date: year_1985, driver: u1, passenger: u2, service_tier: tier_default)
     t2 = Trip.create!(origin_date: year_2015, destination_date: year_1955, driver: u1, passenger: u2, service_tier: tier_pool)
     t3 = Trip.create!(origin_date: year_1985, destination_date: year_1955, driver: u1, passenger: u3, service_tier: tier_pool)
     tpool = TripPool.create
     tpool.update(trips: [t2, t3])
+
+    payment1 = Payment.create(user: u2, trip: t1, amount: 500)
+    payment2 = Payment.create(user: u2, trip: t2, amount: 200)
+    payment3 = Payment.create(user: u3, trip: t3, amount: 200)
 
     puts "Finished creating sample data."
   end
