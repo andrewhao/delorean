@@ -30,6 +30,7 @@ begin
     tier_default = ServiceTier.create!(rate: 5, vehicle_type: vehicle_type_default)
     tier_pool = ServiceTier.create!(rate: 2, vehicle_type: vehicle_type_default, is_eligible_for_trip_pooling: true)
     tier_xl = ServiceTier.create!(rate: 10, vehicle_type: vehicle_type_van)
+    tier_eats = ServiceTier.create!(rate: 0, vehicle_type: vehicle_type_default)
 
     v1 = Vehicle.create!(user: u1, gigawatt_output_rating: 1.21, vehicle_type: vehicle_type_default)
 
@@ -63,7 +64,8 @@ begin
     InflationAdjustment.create(percent_change: 10.2, date: year_1995)
     InflationAdjustment.create(percent_change: 9.2, date: year_2015)
 
-    Order.create(user: u4, menu_items: [menu_item1])
+    o1 = Order.create(user: u4, menu_items: [menu_item1])
+    t_eats = Trip.create(driver: u1, passenger: nil, order: o1, service_tier: tier_eats, origin_date: year_2015, destination_date: year_1985)
 
     puts "Finished creating sample data."
   end

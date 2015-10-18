@@ -4,8 +4,6 @@ class User < ActiveRecord::Base
   validates_uniqueness_of :email
   has_many :orders
   belongs_to :service_tier
-  has_one :vehicle
-  has_many :payments
 
   def driver?
     is_driver?
