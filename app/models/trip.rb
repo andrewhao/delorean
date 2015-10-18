@@ -7,6 +7,8 @@ class Trip < ActiveRecord::Base
   belongs_to :vehicle
   has_one :payment
 
+  scope :hailing, -> { where(driver_id: nil) }
+
   def cost
     service_tier.rate * time_distance_traveled
   end
@@ -19,7 +21,21 @@ class Trip < ActiveRecord::Base
     is_in_progress?
   end
 
+  def hailing?
+    driver.blank?
+  end
+
   def completed?
     !!(driver && passenger)
+  end
+
+  def create_invoice!
+    i = Invoice.find_or_initialize_by(trip: self)
+    i.update(amount: cost, user: passenger)
+    i
+  end
+
+  def paid?
+    payment.present?
   end
 end

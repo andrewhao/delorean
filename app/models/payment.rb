@@ -1,7 +1,6 @@
 class Payment < ActiveRecord::Base
-  belongs_to :user
-  belongs_to :trip
+  belongs_to :invoice
   belongs_to :order
 
-  validates :user, presence: true
+  validates :invoice, presence: true
 end

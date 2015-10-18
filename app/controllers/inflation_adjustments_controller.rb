@@ -1,0 +1,2 @@
+class InflationAdjustmentsController < ApplicationController
+end

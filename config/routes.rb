@@ -1,5 +1,11 @@
 Delorean::Application.routes.draw do
 
+  resources :inflation_adjustments
+  resources :order_menu_items
+  resources :menu_items
+  resources :menus
+  resources :restaurants
+  resources :invoices
   resources :vehicle_types
   resources :trip_pool_trips
   resources :trip_pools

@@ -16,10 +16,13 @@ begin
     u1 = User.create!(email: "driver1@example.com", password: "password", is_driver: true)
     u2 = User.create!(email: "passenger2@example.com", password: "password")
     u3 = User.create!(email: "passenger3@example.com", password: "password")
+    u4 = User.create!(email: "passenger4@example.com", password: "password")
 
     year_2015 = Time.zone.parse("2015-01-01")
+    year_1995 = Time.zone.parse("1995-01-01")
     year_1985 = Time.zone.parse("1985-01-01")
     year_1955 = Time.zone.parse("1955-01-01")
+    year_1935 = Time.zone.parse("1935-01-01")
 
     vehicle_type_default = VehicleType.create!(name: "delorean")
     vehicle_type_van = VehicleType.create!(name: "delorean-van")
@@ -27,6 +30,7 @@ begin
     tier_default = ServiceTier.create!(rate: 5, vehicle_type: vehicle_type_default)
     tier_pool = ServiceTier.create!(rate: 2, vehicle_type: vehicle_type_default, is_eligible_for_trip_pooling: true)
     tier_xl = ServiceTier.create!(rate: 10, vehicle_type: vehicle_type_van)
+
     v1 = Vehicle.create!(user: u1, gigawatt_output_rating: 1.21, vehicle_type: vehicle_type_default)
 
     t1 = Trip.create!(origin_date: year_2015, destination_date: year_1985, driver: u1, passenger: u2, service_tier: tier_default)
@@ -35,9 +39,31 @@ begin
     tpool = TripPool.create
     tpool.update(trips: [t2, t3])
 
-    payment1 = Payment.create(user: u2, trip: t1, amount: 500)
-    payment2 = Payment.create(user: u2, trip: t2, amount: 200)
-    payment3 = Payment.create(user: u3, trip: t3, amount: 200)
+    invoice1 = Invoice.create(user: u2, trip: t1, amount: 500)
+    invoice2 = Invoice.create(user: u2, trip: t2, amount: 200)
+    invoice3 = Invoice.create(user: u3, trip: t3, amount: 200)
+
+    payment1 = Payment.create(invoice: invoice1, amount: 500)
+    payment2 = Payment.create(invoice: invoice2, amount: 200)
+    payment3 = Payment.create(invoice: invoice3, amount: 200)
+
+    restaurant1 = Restaurant.create start_date: year_1985, end_date: year_1995, name: "Lizzie's Drive-Thru Burgers"
+    restaurant2 = Restaurant.create start_date: year_1935, name: "McDonald's"
+
+    menu1 = Menu.create(start_date: year_1985, restaurant: restaurant1, name: 'Lizzie')
+    menu2 = Menu.create(start_date: year_1935, end_date: year_1955, restaurant: restaurant2, name: "McDonalds' Original Menu")
+    menu3 = Menu.create(start_date: year_1955, end_date: year_1995, restaurant: restaurant2, name: "McDonalds' Updated Menu")
+
+    menu_item1 = MenuItem.create(name: "Cheeseburger", menu: menu1, price: 3)
+    menu_item2 = MenuItem.create(name: "McCheeseburger", menu: menu2, price: 30)
+    menu_item3 = MenuItem.create(name: "Big Mac", menu: menu3, price: 300)
+
+    InflationAdjustment.create(percent_change: 1.1, date: year_1955)
+    InflationAdjustment.create(percent_change: 5.2, date: year_1985)
+    InflationAdjustment.create(percent_change: 10.2, date: year_1995)
+    InflationAdjustment.create(percent_change: 9.2, date: year_2015)
+
+    Order.create(user: u4, menu_items: [menu_item1])
 
     puts "Finished creating sample data."
   end

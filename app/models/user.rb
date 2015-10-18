@@ -10,4 +10,8 @@ class User < ActiveRecord::Base
   def driver?
     is_driver?
   end
+
+  def request_trip(passenger_origin_date, tier)
+    Trip.create(origin_date: passenger_origin_date, passenger: self, service_tier: tier)
+  end
 end
