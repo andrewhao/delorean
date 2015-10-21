@@ -1,6 +1,8 @@
-class Payment < ActiveRecord::Base
-  belongs_to :invoice
-  belongs_to :order
+module Financial
+  class Payment < ActiveRecord::Base
+    belongs_to :invoice
+    belongs_to :order
 
-  validates :invoice, presence: true
+    validates :invoice, presence: true
+  end
 end

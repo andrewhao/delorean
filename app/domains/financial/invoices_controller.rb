@@ -1,2 +1,4 @@
-class InvoicesController < ApplicationController
+module Financial
+  class InvoicesController < ApplicationController
+  end
 end

@@ -5,7 +5,7 @@ module Financial
     end
 
     def amount
-      @order.item_cost
+      @order.total_cost
     end
 
     def add(item)

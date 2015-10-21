@@ -1,2 +1,4 @@
-class PaymentsController < ApplicationController
+module Financial
+  class PaymentsController < ApplicationController
+  end
 end
