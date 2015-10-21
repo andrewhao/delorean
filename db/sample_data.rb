@@ -44,27 +44,27 @@ begin
     invoice2 = Financial::Invoice.create(user: u2, trip: t2, amount: 200)
     invoice3 = Financial::Invoice.create(user: u3, trip: t3, amount: 200)
 
-    payment1 = Payment.create(invoice: invoice1, amount: 500)
-    payment2 = Payment.create(invoice: invoice2, amount: 200)
-    payment3 = Payment.create(invoice: invoice3, amount: 200)
+    payment1 = Financial::Payment.create(invoice: invoice1, amount: 500)
+    payment2 = Financial::Payment.create(invoice: invoice2, amount: 200)
+    payment3 = Financial::Payment.create(invoice: invoice3, amount: 200)
 
-    restaurant1 = Restaurant.create start_date: year_1985, end_date: year_1995, name: "Lizzie's Drive-Thru Burgers"
-    restaurant2 = Restaurant.create start_date: year_1935, name: "McDonald's"
+    restaurant1 = FoodDelivery::Restaurant.create start_date: year_1985, end_date: year_1995, name: "Lizzie's Drive-Thru Burgers"
+    restaurant2 = FoodDelivery::Restaurant.create start_date: year_1935, name: "McDonald's"
 
-    menu1 = Menu.create(start_date: year_1985, restaurant: restaurant1, name: 'Lizzie')
-    menu2 = Menu.create(start_date: year_1935, end_date: year_1955, restaurant: restaurant2, name: "McDonalds' Original Menu")
-    menu3 = Menu.create(start_date: year_1955, end_date: year_1995, restaurant: restaurant2, name: "McDonalds' Updated Menu")
+    menu1 = FoodDelivery::Menu.create(start_date: year_1985, restaurant: restaurant1, name: 'Lizzie')
+    menu2 = FoodDelivery::Menu.create(start_date: year_1935, end_date: year_1955, restaurant: restaurant2, name: "McDonalds' Original FoodDelivery::Menu")
+    menu3 = FoodDelivery::Menu.create(start_date: year_1955, end_date: year_1995, restaurant: restaurant2, name: "McDonalds' Updated FoodDelivery::Menu")
 
-    menu_item1 = MenuItem.create(name: "Cheeseburger", menu: menu1, price: 3)
-    menu_item2 = MenuItem.create(name: "McCheeseburger", menu: menu2, price: 30)
-    menu_item3 = MenuItem.create(name: "Big Mac", menu: menu3, price: 300)
+    menu_item1 = FoodDelivery::MenuItem.create(name: "Cheeseburger", menu: menu1, price: 3)
+    menu_item2 = FoodDelivery::MenuItem.create(name: "McCheeseburger", menu: menu2, price: 30)
+    menu_item3 = FoodDelivery::MenuItem.create(name: "Big Mac", menu: menu3, price: 300)
 
-    InflationAdjustment.create(percent_change: 1.1, date: year_1955)
-    InflationAdjustment.create(percent_change: 5.2, date: year_1985)
-    InflationAdjustment.create(percent_change: 10.2, date: year_1995)
-    InflationAdjustment.create(percent_change: 9.2, date: year_2015)
+    Financial::InflationAdjustment.create(percent_change: 1.1, date: year_1955)
+    Financial::InflationAdjustment.create(percent_change: 5.2, date: year_1985)
+    Financial::InflationAdjustment.create(percent_change: 10.2, date: year_1995)
+    Financial::InflationAdjustment.create(percent_change: 9.2, date: year_2015)
 
-    o1 = Order.create(user: u4, menu_items: [menu_item1])
+    o1 = FoodDelivery::Order.create(user: u4, menu_items: [menu_item1])
     t_eats = Rideshare::Trip.create(driver: u1, passenger: nil, order: o1, service_tier: tier_eats, origin_date: year_2015, destination_date: year_1985)
 
     puts "Finished creating sample data."

@@ -1,6 +1,6 @@
 module FoodDelivery
   class Order < ActiveRecord::Base
-    belongs_to :user
+    belongs_to :user, class_name: Identity::User
     has_many :order_menu_items
     has_many :menu_items, through: :order_menu_items
 

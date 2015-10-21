@@ -1,2 +1,4 @@
-class InflationAdjustment < ActiveRecord::Base
+module Financial
+  class InflationAdjustment < ActiveRecord::Base
+  end
 end
