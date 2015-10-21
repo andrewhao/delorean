@@ -1,2 +1,4 @@
-class OrderMenuItemsController < ApplicationController
+module FoodDelivery
+  class OrderMenuItemsController < ApplicationController
+  end
 end

@@ -1,2 +1,4 @@
-class InflationAdjustmentsController < ApplicationController
+module FoodDelivery
+  class InflationAdjustmentsController < ApplicationController
+  end
 end

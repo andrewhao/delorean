@@ -1,2 +1,4 @@
-class Restaurant < ActiveRecord::Base
+module FoodDelivery
+  class Restaurant < ActiveRecord::Base
+  end
 end
