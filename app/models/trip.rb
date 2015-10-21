@@ -10,6 +10,14 @@ class Trip < ActiveRecord::Base
 
   scope :hailing, -> { where(driver_id: nil) }
 
+  def order
+    order_finder.find_from_trip(self)
+  end
+
+  def order_finder
+    OrderFinder.new
+  end
+
   def cost
     service_tier.rate * time_distance_traveled
   end

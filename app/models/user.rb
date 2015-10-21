@@ -12,4 +12,8 @@ class User < ActiveRecord::Base
   def request_trip(passenger_origin_date, tier)
     Trip.create(origin_date: passenger_origin_date, passenger: self, service_tier: tier)
   end
+
+  def passengers_near_me(current_date)
+
+  end
 end
