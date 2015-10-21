@@ -13,10 +13,10 @@
 puts "Creating sample data..."
 begin
   ActiveRecord::Base.transaction do
-    u1 = User.create!(email: "driver1@example.com", password: "password", is_driver: true)
-    u2 = User.create!(email: "passenger2@example.com", password: "password")
-    u3 = User.create!(email: "passenger3@example.com", password: "password")
-    u4 = User.create!(email: "passenger4@example.com", password: "password")
+    u1 = Identity::User.create!(email: "driver1@example.com", password: "password", is_driver: true)
+    u2 = Identity::User.create!(email: "passenger2@example.com", password: "password")
+    u3 = Identity::User.create!(email: "passenger3@example.com", password: "password")
+    u4 = Identity::User.create!(email: "passenger4@example.com", password: "password")
 
     year_2015 = Time.zone.parse("2015-01-01")
     year_1995 = Time.zone.parse("1995-01-01")
@@ -24,25 +24,25 @@ begin
     year_1955 = Time.zone.parse("1955-01-01")
     year_1935 = Time.zone.parse("1935-01-01")
 
-    vehicle_type_default = VehicleType.create!(name: "delorean")
-    vehicle_type_van = VehicleType.create!(name: "delorean-van")
+    vehicle_type_default = Rideshare::VehicleType.create!(name: "delorean")
+    vehicle_type_van = Rideshare::VehicleType.create!(name: "delorean-van")
 
-    tier_default = ServiceTier.create!(rate: 5, vehicle_type: vehicle_type_default)
-    tier_pool = ServiceTier.create!(rate: 2, vehicle_type: vehicle_type_default, is_eligible_for_trip_pooling: true)
-    tier_xl = ServiceTier.create!(rate: 10, vehicle_type: vehicle_type_van)
-    tier_eats = ServiceTier.create!(rate: 0, vehicle_type: vehicle_type_default)
+    tier_default = Rideshare::ServiceTier.create!(rate: 5, vehicle_type: vehicle_type_default)
+    tier_pool = Rideshare::ServiceTier.create!(rate: 2, vehicle_type: vehicle_type_default, is_eligible_for_trip_pooling: true)
+    tier_xl = Rideshare::ServiceTier.create!(rate: 10, vehicle_type: vehicle_type_van)
+    tier_eats = Rideshare::ServiceTier.create!(rate: 0, vehicle_type: vehicle_type_default)
 
-    v1 = Vehicle.create!(user: u1, gigawatt_output_rating: 1.21, vehicle_type: vehicle_type_default)
+    v1 = Rideshare::Vehicle.create!(user: u1, gigawatt_output_rating: 1.21, vehicle_type: vehicle_type_default)
 
-    t1 = Trip.create!(origin_date: year_2015, destination_date: year_1985, driver: u1, passenger: u2, service_tier: tier_default)
-    t2 = Trip.create!(origin_date: year_2015, destination_date: year_1955, driver: u1, passenger: u2, service_tier: tier_pool)
-    t3 = Trip.create!(origin_date: year_1985, destination_date: year_1955, driver: u1, passenger: u3, service_tier: tier_pool)
-    tpool = TripPool.create
+    t1 = Rideshare::Trip.create!(origin_date: year_2015, destination_date: year_1985, driver: u1, passenger: u2, service_tier: tier_default)
+    t2 = Rideshare::Trip.create!(origin_date: year_2015, destination_date: year_1955, driver: u1, passenger: u2, service_tier: tier_pool)
+    t3 = Rideshare::Trip.create!(origin_date: year_1985, destination_date: year_1955, driver: u1, passenger: u3, service_tier: tier_pool)
+    tpool = Rideshare::TripPool.create
     tpool.update(trips: [t2, t3])
 
-    invoice1 = Invoice.create(user: u2, trip: t1, amount: 500)
-    invoice2 = Invoice.create(user: u2, trip: t2, amount: 200)
-    invoice3 = Invoice.create(user: u3, trip: t3, amount: 200)
+    invoice1 = Financial::Invoice.create(user: u2, trip: t1, amount: 500)
+    invoice2 = Financial::Invoice.create(user: u2, trip: t2, amount: 200)
+    invoice3 = Financial::Invoice.create(user: u3, trip: t3, amount: 200)
 
     payment1 = Payment.create(invoice: invoice1, amount: 500)
     payment2 = Payment.create(invoice: invoice2, amount: 200)
@@ -65,7 +65,7 @@ begin
     InflationAdjustment.create(percent_change: 9.2, date: year_2015)
 
     o1 = Order.create(user: u4, menu_items: [menu_item1])
-    t_eats = Trip.create(driver: u1, passenger: nil, order: o1, service_tier: tier_eats, origin_date: year_2015, destination_date: year_1985)
+    t_eats = Rideshare::Trip.create(driver: u1, passenger: nil, order: o1, service_tier: tier_eats, origin_date: year_2015, destination_date: year_1985)
 
     puts "Finished creating sample data."
   end

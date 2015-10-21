@@ -3,10 +3,10 @@ module Rideshare
     belongs_to :service_tier
     has_many :trip_pool_trips
     has_one :trip_pool, through: :trip_pool_trips
-    belongs_to :driver, foreign_key: :driver_id, class_name: User
-    belongs_to :passenger, foreign_key: :passenger_id, class_name: User
+    belongs_to :driver, foreign_key: :driver_id, class_name: Identity::User
+    belongs_to :passenger, foreign_key: :passenger_id, class_name: Identity::User
     belongs_to :vehicle
-    belongs_to :order, class_name: Financial::Order
+    belongs_to :order, class_name: FoodDelivery::Order
     has_one :payment
 
     scope :hailing, -> { where(driver_id: nil) }
