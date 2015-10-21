@@ -1,3 +1,5 @@
-class Menu < ActiveRecord::Base
-  belongs_to :restaurant
+module FoodDelivery
+  class Menu < ActiveRecord::Base
+    belongs_to :restaurant
+  end
 end

@@ -1,2 +1,4 @@
-class TripPoolTripsController < ApplicationController
+module Rideshare
+  class TripPoolTripsController < ApplicationController
+  end
 end

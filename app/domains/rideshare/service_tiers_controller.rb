@@ -1,2 +1,4 @@
-class ServiceTiersController < ApplicationController
+module RideShare
+  class ServiceTiersController < ApplicationController
+  end
 end

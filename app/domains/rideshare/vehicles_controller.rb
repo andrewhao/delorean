@@ -1,2 +1,4 @@
-class VehiclesController < ApplicationController
+module Rideshare
+  class VehiclesController < ApplicationController
+  end
 end

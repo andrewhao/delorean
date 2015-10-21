@@ -1,2 +1,4 @@
-class VehicleType < ActiveRecord::Base
+module Rideshare
+  class VehicleType < ActiveRecord::Base
+  end
 end
