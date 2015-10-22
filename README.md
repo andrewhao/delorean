@@ -12,6 +12,10 @@ push it far, far into the future.
 
 Generated with [Raygun](https://github.com/carbonfive/raygun).
 
+## Legacy monolith is on [`monolith`](https://github.com/andrewhao/delorean/tree/monolith) branch
+
+[Compare the two systems!](https://github.com/andrewhao/delorean/compare/monolith...master)
+
 ## Development
 
 ### Rails-ERD

@@ -6,17 +6,17 @@ module Rideshare
     belongs_to :driver, foreign_key: :driver_id, class_name: Identity::User
     belongs_to :passenger, foreign_key: :passenger_id, class_name: Identity::User
     belongs_to :vehicle
-    belongs_to :order, class_name: FoodDelivery::Order
+    # belongs_to :order, class_name: FoodDelivery::Order
     has_one :payment
 
     scope :hailing, -> { where(driver_id: nil) }
 
     def order
-      order_finder.find_from_trip(self)
+      food_delivery_adapter.order_from_trip(self)
     end
 
-    def order_finder
-      OrderFinder.new
+    def food_delivery_adapter
+      FoodDeliveryAdapter.new
     end
 
     def cost
