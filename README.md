@@ -22,6 +22,6 @@ Generated with [Raygun](https://github.com/carbonfive/raygun).
 
 Generate an ERD diagram by running:
 
-   $ bundle exec erd
+      $ bundle exec erd
 
 The asset is generated in the `doc/` directory.
