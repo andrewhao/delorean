@@ -1,5 +1,11 @@
 # Delorean
 
+## Watch the Railsconf video
+
+Be sure to watch my Railsconf 2017 talk (https://www.youtube.com/watch?v=52qChRS4M0Y) on DDD and Rails, then come back to this repository to see some of those ideas in action.
+
+---
+
 ![Delorean](http://i.giphy.com/ZbErMnK1VShsQ.gif)
 
 Great scott! Delorean(tm) is the hottest time travel rideshare startup in
